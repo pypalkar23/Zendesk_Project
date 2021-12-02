@@ -15,6 +15,12 @@ As mentioned in the requirements.txt, the project is dependent on following exte
 The dependencies can be installed with python's `pip` utility .  
 * `pip3 install -r requirements.txt`   
 
+## Note:
+- The program reads the **__email_id__** and the access token **__token__** from the **__creds.props__** file.  
+The original file is not commmited for security issues. 
+- However, one can rename the provided reference file **__creds.props.sample__** to **__creds.props__** and put their credentials in that file.
+-  One needs to replace **__{email}__** and **__{token}__** parameters with their own values that are associated with their zendesk account.
+
 ## Execution:
 After successful installation of dependencies, one can execute the program by following command.
 * `python3 main.py`
@@ -52,6 +58,6 @@ Below are the screenshots for the program to demonstrate the functionality
 - Individual Ticket Flow:  
 ![individual_ticket](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/ticket_display.png)
 
-- Error when ticket user has asked for does not exist in the system. 
-    ![ticket_not_available](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/ticket_does_not_exist.png)
+- Error when ticket user has asked for does not exist in the system.  
+![ticket_not_available](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/ticket_does_not_exist.png)
 
