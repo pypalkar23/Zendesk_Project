@@ -1,4 +1,5 @@
 [config]
-api_url = https://zccpypalkar23.zendesk.com/api/v2/tickets.json?page[size]=25
-
+api_url = https://zccpypalkar23.zendesk.com/api/v2
+tickets_handle = /tickets.json?page[size]=25
+ticket_handle= /tickets/{}.json
 
