@@ -1,6 +1,7 @@
 # Zendesk Command Line Utility for Tickets
 
 - This project was made as an assignment for Zendesk Internship Assessment.
+- The Zendesk subdomain used for the same is : `https://zccpypalkar23.zendesk.com`
 - The utility is built in `python3`.
 
 ### Dependencies:
