@@ -37,7 +37,7 @@ Below are the screenshots for the program to demonstrate the functionality
 - Initial Menu:   
 ![initial_menu](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/first_menu.png)
 
-- Menu when user has already paged through more than or equal to first 50 tickets and more tickets are available in the system.
+- Menu when user has already paged through more than or equal to first 50 tickets and more tickets are available in the system.  
 ![next_menu](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/next_menu.png)
 
 - Menu when user has paged through all the tickets for the account.
@@ -53,5 +53,5 @@ Below are the screenshots for the program to demonstrate the functionality
 ![individual_ticket](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/ticket_display.png)
 
 - Error when ticket user has asked for does not exist in the system. 
-![ticket_not_available](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/ticket_does_not_exist.png)
+    ![ticket_not_available](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/ticket_does_not_exist.png)
 
