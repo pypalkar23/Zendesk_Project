@@ -3,3 +3,4 @@ urls.txt
 cred.ini
 cred.props
 .DS_Store
+*.pyc

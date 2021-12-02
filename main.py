@@ -7,8 +7,8 @@ from datetime import datetime
 
 config_file = "project.props"
 cred_file = "cred.props"
-ticket_seperator = "-"*80+"\n"
-line_seperator = "*"*80+"\n"
+ticket_seperator = "-"*80
+line_seperator = "*"*80
 
 def get_tickets_url():
     parser = RawConfigParser()
@@ -36,7 +36,6 @@ def get_token():
 def is_empty(object,key):
     if key in object and object[key]!=None and object[key]!="null":
         return False
-    print(object[key])
     return True
 
 def get_auth_headers():
@@ -47,13 +46,12 @@ def get_formatted_date(date_str):
 
 def parse_ticket(ticket_json):
     ticket_lines = []
-    ticket_lines.append(ticket_seperator)
-    if("error" in ticket_json):
+    
+    if "error" in ticket_json:
         ticket_lines.append("<---- Ticket with such id does not exist ----->")
     
     else:
         ticket= ticket_json["ticket"]
-        ticket_lines.append("Here are the details for the ticket\n")
         ticket_lines.append("* Id-> {}\n".format(ticket["id"]))
         if not is_empty(ticket,"type"):
             ticket_lines.append("* Type -> {}\n".format(ticket["type"]))
@@ -74,27 +72,30 @@ def parse_ticket(ticket_json):
         ticket_lines.append("* Modified on -> {}\n".format(get_formatted_date(ticket["updated_at"])))
         if not is_empty(ticket,"due_at"):
             ticket_lines.append("* Due on -> {}\n".format(get_formatted_date(ticket["due_at"])))
-        ticket_lines.append("* Description ->\n{}\n".format(ticket["description"]))
+        ticket_lines.append("* Description ->\n{}".format(ticket["description"]))
     
-    ticket_lines.append("\n")
     return "".join(ticket_lines)
 
 def parse_ticket_summary(ticket):
      ticket_lines = []
-     ticket_lines.append("Id -> {} | ".format(ticket["id"]))
-     ticket_lines.append("Subject -> {}| ".format(ticket["subject"]))
-     ticket_lines.append("Requested By -> {} | ".format(ticket["requester_id"]))
-     ticket_lines.append("Created On -> {}".format(get_formatted_date(ticket["created_at"])))
-     ticket_lines.append("\n\n")
+     ticket_lines.append("{} | ".format(ticket["id"]))
+     ticket_lines.append("{} | ".format(ticket["subject"]))
+     ticket_lines.append("{} | ".format(ticket["requester_id"]))
+     ticket_lines.append("{}".format(get_formatted_date(ticket["created_at"])))
+     ticket_lines.append("\n")
      return "".join(ticket_lines)
 
 
-def get_ticket(url):
-    resp = get(url,headers=get_auth_headers())
-    if resp.ok or resp.status_code==404:
-        return parse_ticket(loads(resp.text))
-    else: 
-        return "Some Error Occured"
+def get_ticket(number):
+    if isinstance(number,str) and number.isdigit():
+        ticket_url = get_ticket_url().format(number)
+        resp = get(ticket_url,headers=get_auth_headers())
+        if resp.ok or resp.status_code==404:
+            return parse_ticket(loads(resp.text))
+        else: 
+            return "<----------Some Error Occured-------------->"
+    else:
+        return "<------------Enter correct number--------------->"
 
 
 def parse_tickets(tickets_str):
@@ -103,7 +104,6 @@ def parse_tickets(tickets_str):
     ticket_lines = []
     next_url = None
     prev_url = None
-    ticket_lines.append("Here is the list of tickets\n")
     for ticket in tickets_list:
         ticket_lines.append(parse_ticket_summary(ticket))
         
@@ -115,8 +115,8 @@ def parse_tickets(tickets_str):
             if(ticket_json["links"]["next"]):
                 next_url =  ticket_json["links"]["next"]
 
-    #print(prev_url,end="\n")
-    #print(next_url,end="\n")
+    print(prev_url,end="\n")
+    print(next_url,end="\n")
     return "".join(ticket_lines), prev_url, next_url
      
 def get_tickets(url):
@@ -147,8 +147,7 @@ def get_menu(prev=False,next=False):
     return "".join(lines)
     
 def main():
-    tickets_url = get_tickets_url()   
-    ticket_url  = get_ticket_url()
+    tickets_url = get_tickets_url()
     user_input = ""
     prev_url = None
     next_url = tickets_url
@@ -167,17 +166,20 @@ def main():
                 page-=1
 
             if(curr_url!=None):
+                print(ticket_seperator)
                 tickets,prev_url,next_url = get_tickets(curr_url)
                 curr_url = None
+                print("ID | SUBJECT | REQUESTED BY | CREATED ON")
+                print(ticket_seperator)
                 print(tickets)
+
         elif user_input=="3":
             ticket_no = input("Enter ticket Id:")
-            if ticket_no.isdigit():
-               ticket = get_ticket(ticket_url.format(ticket_no))
-               print(ticket)
+            print(ticket_seperator)
+            ticket = get_ticket(ticket_no)
+            print(ticket)
             
 
     
-       
 if __name__ == "__main__":
     main()
