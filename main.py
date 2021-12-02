@@ -115,8 +115,6 @@ def parse_tickets(tickets_str):
             if(ticket_json["links"]["next"]):
                 next_url =  ticket_json["links"]["next"]
 
-    print(prev_url,end="\n")
-    print(next_url,end="\n")
     return "".join(ticket_lines), prev_url, next_url
      
 def get_tickets(url):
