@@ -190,7 +190,6 @@ def main():
                 curr_url = prev_url
 
             if(curr_url != None):
-
                 tickets, prev_url, next_url = get_tickets(curr_url)
                 curr_url = None
                 if(not tickets.startswith("Something")):
