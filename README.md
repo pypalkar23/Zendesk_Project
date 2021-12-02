@@ -17,7 +17,7 @@ The dependencies can be installed with python's `pip` utility .
 
 ## Note:
 - The program reads the **__email_id__** and the access token **__token__** from the **__creds.props__** file.  
-The original file is not commmited for security issues. 
+The original file is not commmited sighting security issues. 
 - However, one can rename the provided reference file **__creds.props.sample__** to **__creds.props__** and put their credentials in that file.
 -  One needs to replace **__{email}__** and **__{token}__** parameters with their own values that are associated with their zendesk account.
 
