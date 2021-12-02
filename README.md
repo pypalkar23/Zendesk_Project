@@ -35,23 +35,23 @@ As mentioned in the requirement this program can
 Below are the screenshots for the program to demonstrate the functionality
 
 - Initial Menu:   
-    ![initial_menu](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/first_menu.png)
+![initial_menu](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/first_menu.png)
 
 - Menu when user has already paged through more than or equal to first 50 tickets and more tickets are available in the system.
-    ![next_menu](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/next_menu.png)
+![next_menu](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/next_menu.png)
 
 - Menu when user has paged through all the tickets for the account.
-    ![last_menu](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/last_menu.png)
+![last_menu](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/last_menu.png)
 
-- Ticket List:
-    ![ticket_list](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/ticket_list.png)
+- Ticket List:   
+![ticket_list](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/ticket_list.png)
 
-- Error shown when tickets can't be retrieved
-    ![error_shown](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/Error.png)
+- Error shown when tickets can't be retrieved  
+![error_shown](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/Error.png)
 
-- Individual Ticket Flow:
-    ![individual_ticket](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/ticket_display.png)
+- Individual Ticket Flow:  
+![individual_ticket](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/ticket_display.png)
 
-- Error when ticket user has asked for does not exist in the system.
-    ![ticket_not_available](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/ticket_does_not_exist.png)
+- Error when ticket user has asked for does not exist in the system. 
+![ticket_not_available](https://github.com/pypalkar23/Zendesk_Project/blob/main/images/ticket_does_not_exist.png)
 
