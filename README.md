@@ -2,7 +2,7 @@
 
 - This project was made as an assignment for Zendesk Internship Assessment.
 - The Zendesk subdomain used for the same is : `https://zccpypalkar23.zendesk.com`
-- The utility is built in `python3`.
+- The utility is built in `python3 (3.10.0)`.
 
 ### Dependencies:
 As mentioned in the requirements.txt, the project is dependent on following external python modules
